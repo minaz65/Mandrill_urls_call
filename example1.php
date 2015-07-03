@@ -19,6 +19,7 @@ try {
             </thead>
 
             <?php
+            //loop trough an array to get url' sent, clicks
             foreach ($result as $key => $value) {
                 echo '<tr>
                      <td>' . $value['url'] . '</td>' .
@@ -29,11 +30,13 @@ try {
         </table>
     </div>
     <pre>
+         <!--Display result-->
     <?php print_r($result); ?>
     </pre>
 
     <p>you can get the list of tracking domains set up for this account.</p>
     <?php
+    //get the list of Domains
     $result1 = $mandrill->urls->trackingDomains();
     ?>
 
@@ -50,6 +53,7 @@ try {
             </thead>
 
             <?php
+            //loop trough an array to get domain' created_at, last_tested_at
             foreach ($result1 as $key => $value) {
                 echo '<tr>
                      <td>' . $value['domain'] . '</td>' .
